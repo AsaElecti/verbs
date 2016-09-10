@@ -18,6 +18,7 @@
 </style>  
 </head>
 <body>
+	<span><a href="index.php">HOME</a></span>
 	<h1>Second file</h1>
 	<div style="float:right;">
 		<span>
@@ -66,33 +67,37 @@
 					</div>
 					<div class='inf'>
 						<?php 
-						if(($_POST['inf']=='visible')||($_POST['inf']==$verbsArr[$currentIndex-1])){
+						if($_SESSION['visible']=='inf'){
 							print_r($verbsArr[$currentIndex-1]['inf']); 
-						}else{
+						}elseif($_POST['inf']!=$verbsArr[$currentIndex-1]['inf']){
 							echo "Infinitive<br/>";
 							echo "<input type='text' name='inf' style='border:2px solid red;' />";
+						}else{
+							print_r($verbsArr[$currentIndex-1]['inf']);
 						}
 						?>
 					</div>
 					<div class='ps'>
 						<?php 
-						if($visibleForm == "ps"){
-							print_r($verbsArr[$currentIndex]['ps']); 
-						}
-						else{
-							echo "Past simple:<br/>";
-							echo "<input type='text' name='ps' />";
+						if($_SESSION['visible']=='ps'){
+							print_r($verbsArr[$currentIndex-1]['ps']); 
+						}elseif($_POST['ps']!= $verbsArr[$currentIndex-1]['ps']){
+							echo "Past Simple<br/>";
+							echo "<input type='text' name='ps' style='border:2px solid red;' />";
+						}else{
+							print_r($verbsArr[$currentIndex-1]['ps']);
 						}
 							?>
 					</div>
 					<div class='pp'>
 						<?php 
-						if($visibleForm == "pp"){
-							print_r($verbsArr[$currentIndex]['pp']); 
-						}
-						else{
-							echo "Past participle:<br/>";
-							echo "<input type='text' name='pp' />";
+						if($_SESSION['visible']=='pp'){
+							print_r($verbsArr[$currentIndex-1]['pp']); 
+						}elseif($_POST['ps'] != $verbsArr[$currentIndex-1]['ps']){
+							echo "Past Participle<br/>";
+							echo "<input type='text' name='ps' style='border:2px solid red;' />";
+						}else{
+							print_r($verbsArr[$currentIndex-1]['ps']);
 						}
 							?>
 					</div>

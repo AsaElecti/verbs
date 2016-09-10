@@ -3,6 +3,7 @@
 	<title></title>
 </head>
 <body>
+	<span><a href="index.php">HOME</a></span>
 	<h1>First file</h1>
 	<div">
 		<span>
@@ -18,8 +19,8 @@
 	</div>
 	<br />
 	<form action='index2.php' method='POST'>
-		<h3>Few more cuestions:</h3>
-		<h3><span>Which form of irregular verbs should to be visible?</span></h3><br />
+		<h3>Few more questions:</h3>
+		<h3><span>Do you want to make one of the forms visible? If "yes", what kind of the form you want to see?</span></h3><br />
 		<input type='radio' name='visibleForm' value='inf' />Infinitive<br />
 		<input type='radio' name='visibleForm' value='ps' />Past Simple<br />
 		<input type='radio' name='visibleForm' value='pp' />Past Participle<br />

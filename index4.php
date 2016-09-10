@@ -3,6 +3,7 @@
 	<title></title>
 </head>
 <body>
+	<span><a href="index.php">HOME</a></span>
 	<h1>Third file</h1>
 	<div style="float:right;">
 		<span>

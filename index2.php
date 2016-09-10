@@ -18,6 +18,7 @@
 </style>  
 </head>
 <body>
+	<span><a href="index.php">HOME</a></span>
 	<h1>First file</h1>
 	<div style="float:right;">
 		<span>
@@ -81,6 +82,11 @@
 					<div class='number'>
 						<?php print_r($verbsArr[$currentIndex][0]);//Выводит номер строки в массиве
 						$_SESSION['currentIndex'] = $verbsArr[$currentIndex][0];//Отправляее № индекса в массиве
+						if($_POST['visibleForm']){// if set visibleForm - take it to the session, if no - take it to "no"
+							$_SESSION['visible'] = $visibleForm;
+						}else{
+							$_SESSION['visible'] = "no";
+						}
 						 ?>
 					</div>
 					<div class='trnsl'>
@@ -90,7 +96,7 @@
 						<?php 
 						if($visibleForm == "inf"){
 							print_r($verbsArr[$currentIndex]['inf']);
-							echo "<input type='hidden' name='inf' value='visible' />"; 
+							echo "<input type='hidden' name='visible' value='inf' />"; 
 						}
 						else{
 							echo "Infinitive:<br/>";
@@ -102,7 +108,7 @@
 						<?php 
 						if($visibleForm == "ps"){
 							print_r($verbsArr[$currentIndex]['ps']); 
-							echo "<input type='hidden' name='ps' value='visible' />";
+							echo "<input type='hidden' name='visible' value='ps' />";
 						}
 						else{
 							echo "Past simple:<br/>";
@@ -114,7 +120,7 @@
 						<?php 
 						if($visibleForm == "pp"){
 							print_r($verbsArr[$currentIndex]['pp']);
-							echo "<input type='hidden' name='pp' value='visible' />"; 
+							echo "<input type='hidden' name='visible' value='pp' />"; 
 						}
 						else{
 							echo "Past participle:<br/>";
