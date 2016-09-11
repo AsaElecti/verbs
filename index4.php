@@ -12,11 +12,6 @@
 				echo "<h2>";
 				echo $_SESSION['user'][0];
 				echo "</h2>";
-				$_SESSION['answer2'] = $_POST['answer2'];
-				$_SESSION['question2'] = $_POST['question2'];
-				$a = mt_rand(1,9);
-				$b = mt_rand(1,9);
-				$question3 = $a + $b;
 			?>		
 		</span>
 	</div>

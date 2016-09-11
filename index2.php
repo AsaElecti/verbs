@@ -26,10 +26,7 @@
 				session_start();
 				echo "<h2>";
 				echo $_SESSION['user'][0];
-				echo "</h2>";
-				$a = mt_rand(1,9);
-				$b = mt_rand(1,9);
-				$question1 = $a + $b;						
+				echo "</h2>";				
 			?>		
 		</span>
 	</div>
@@ -39,7 +36,7 @@
 				$host='localhost'; // имя хоста (уточняется у провайдера)
 				$database='verbs'; // имя базы данных, которую вы должны создать
 				$user='root'; // заданное вами имя пользователя, либо определенное провайдером
-				$pswd='a47287472'; // заданный вами пароль
+				$pswd=''; // заданный вами пароль
  
 				$connection = mysqli_connect($host, $user, $pswd, $database);
 				mysqli_set_charset($connection, "utf8");

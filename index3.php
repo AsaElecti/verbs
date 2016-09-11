@@ -33,7 +33,7 @@
 				$host='localhost'; // имя хоста (уточняется у провайдера)
 				$database='verbs'; // имя базы данных, которую вы должны создать
 				$user='root'; // заданное вами имя пользователя, либо определенное провайдером
-				$pswd='a47287472'; // заданный вами пароль
+				$pswd=''; // заданный вами пароль
  
 				$connection = mysqli_connect($host, $user, $pswd, $database);
 				mysqli_set_charset($connection, "utf8");
@@ -74,7 +74,7 @@
 							echo "<input type='text' name='inf' style='border:2px solid red;' />";
 						}else{
 							print_r($verbsArr[$currentIndex-1]['inf']);
-							$correctAnswerInf = $verbsArr[$currentIndex-1]['inf'];//esli otvet dan pravilno - peredaem egp metodom POST vo vseh posleduushig iteraciyah
+							$correctAnswerInf = $verbsArr[$currentIndex-1]['inf'];//Если ответ дан правильно - передаем его методом POST во всех последующих итерациях
 							echo "<input type='hidden' name='inf' value='$correctAnswerInf' />";
 						}
 						?>
@@ -88,7 +88,7 @@
 							echo "<input type='text' name='ps' style='border:2px solid red;' />";
 						}else{
 							print_r($verbsArr[$currentIndex-1]['ps']);
-							$correctAnswerPs = $verbsArr[$currentIndex-1]['ps'];//esli otvet dan pravilno - peredaem egp metodom POST vo vseh posleduushig iteraciyah
+							$correctAnswerPs = $verbsArr[$currentIndex-1]['ps'];//Если ответ дан правильно - передаем его методом POST во всех последующих итерациях
 							echo "<input type='hidden' name='ps' value='$correctAnswerPs' />";
 						}
 							?>
@@ -102,7 +102,7 @@
 							echo "<input type='text' name='pp' style='border:2px solid red;' />";
 						}else{
 							print_r($verbsArr[$currentIndex-1]['pp']);
-							$correctAnswerPp = $verbsArr[$currentIndex-1]['pp'];//esli otvet dan pravilno - peredaem egp metodom POST vo vseh posleduushig iteraciyah
+							$correctAnswerPp = $verbsArr[$currentIndex-1]['pp'];//Если ответ дан правильно - передаем его методом POST во всех последующих итерациях
 							echo "<input type='hidden' name='pp' value='$correctAnswerPp' />";
 						}
 							?>

@@ -20,7 +20,7 @@
 	<br />
 	<form action='index2.php' method='POST'>
 		<h3>Few more questions:</h3>
-		<h3><span>Do you want to make one of the forms visible? If "yes", what kind of the form you want to see?</span></h3><br />
+		<h3><span>Do you want to make one of the forms visible? If "yes", what kind of the form do you want to see?</span></h3><br />
 		<input type='radio' name='visibleForm' value='inf' />Infinitive<br />
 		<input type='radio' name='visibleForm' value='ps' />Past Simple<br />
 		<input type='radio' name='visibleForm' value='pp' />Past Participle<br />
