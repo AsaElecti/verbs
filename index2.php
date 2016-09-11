@@ -69,24 +69,17 @@
 					echo "You are entered correct all of verbs!";
 				}
 				
-				if($_POST['visibleForm']!="no"){//Проверяем если из Пост пришел тип формы, которая должна отображаться, то записываем в сессию
-					$visibleForm = $_POST['visibleForm'];
-					$_SESSION['visibleForm']=$visibleForm;
-				}else{//иначе вытягиваем значение из сесси
-					$visibleForm = $_SESSION['visibleForm'];
-				}
-				
+				if($_POST['visibleForm']){// if set visibleForm - take it to the session, if no - take it to "no"
+							$_SESSION['visible'] = $_POST['visibleForm'];
+						}else{
+							$_SESSION['visible'] = "no";
+						}				
 				?>				
 				<form action='index3.php' method='POST'>
 				<div>
 					<div class='number'>
 						<?php print_r($verbsArr[$currentIndex][0]);//Выводит номер строки в массиве
 						$_SESSION['currentIndex'] = $verbsArr[$currentIndex][0];//Отправляее № индекса в массиве
-						if($_POST['visibleForm']){// if set visibleForm - take it to the session, if no - take it to "no"
-							$_SESSION['visible'] = $visibleForm;
-						}else{
-							$_SESSION['visible'] = "no";
-						}
 						 ?>
 					</div>
 					<div class='trnsl'>
@@ -94,7 +87,7 @@
 					</div>
 					<div class='inf'>
 						<?php 
-						if($visibleForm == "inf"){
+						if($_SESSION['visible'] == "inf"){
 							print_r($verbsArr[$currentIndex]['inf']);
 							echo "<input type='hidden' name='visible' value='inf' />"; 
 						}
@@ -106,7 +99,7 @@
 					</div>
 					<div class='ps'>
 						<?php 
-						if($visibleForm == "ps"){
+						if($_SESSION['visible'] == "ps"){
 							print_r($verbsArr[$currentIndex]['ps']); 
 							echo "<input type='hidden' name='visible' value='ps' />";
 						}
@@ -118,7 +111,7 @@
 					</div>
 					<div class='pp'>
 						<?php 
-						if($visibleForm == "pp"){
+						if($_SESSION['visible'] == "pp"){
 							print_r($verbsArr[$currentIndex]['pp']);
 							echo "<input type='hidden' name='visible' value='pp' />"; 
 						}

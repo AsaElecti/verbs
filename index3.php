@@ -74,6 +74,8 @@
 							echo "<input type='text' name='inf' style='border:2px solid red;' />";
 						}else{
 							print_r($verbsArr[$currentIndex-1]['inf']);
+							$correctAnswerInf = $verbsArr[$currentIndex-1]['inf'];//esli otvet dan pravilno - peredaem egp metodom POST vo vseh posleduushig iteraciyah
+							echo "<input type='hidden' name='inf' value='$correctAnswerInf' />";
 						}
 						?>
 					</div>
@@ -86,6 +88,8 @@
 							echo "<input type='text' name='ps' style='border:2px solid red;' />";
 						}else{
 							print_r($verbsArr[$currentIndex-1]['ps']);
+							$correctAnswerPs = $verbsArr[$currentIndex-1]['ps'];//esli otvet dan pravilno - peredaem egp metodom POST vo vseh posleduushig iteraciyah
+							echo "<input type='hidden' name='ps' value='$correctAnswerPs' />";
 						}
 							?>
 					</div>
@@ -93,11 +97,13 @@
 						<?php 
 						if($_SESSION['visible']=='pp'){
 							print_r($verbsArr[$currentIndex-1]['pp']); 
-						}elseif($_POST['ps'] != $verbsArr[$currentIndex-1]['ps']){
+						}elseif($_POST['pp'] != $verbsArr[$currentIndex-1]['pp']){
 							echo "Past Participle<br/>";
-							echo "<input type='text' name='ps' style='border:2px solid red;' />";
+							echo "<input type='text' name='pp' style='border:2px solid red;' />";
 						}else{
-							print_r($verbsArr[$currentIndex-1]['ps']);
+							print_r($verbsArr[$currentIndex-1]['pp']);
+							$correctAnswerPp = $verbsArr[$currentIndex-1]['pp'];//esli otvet dan pravilno - peredaem egp metodom POST vo vseh posleduushig iteraciyah
+							echo "<input type='hidden' name='pp' value='$correctAnswerPp' />";
 						}
 							?>
 					</div>
