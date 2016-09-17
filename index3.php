@@ -47,7 +47,7 @@
 				echo $count;
 				$verbsArr[] = array();
 				for($i=0; $i<$count; $i++){
-					$verbsArr[$i] = mysqli_fetch_array($result);
+					$verlbsArr[$i] = mysqli_fetch_array($result);
 				}
 				/*echo "</ br>";
 				echo "<pre>";
@@ -68,7 +68,9 @@
 					<div class='inf'>
 						<?php 
 						if($_SESSION['visible']=='inf'){
-							print_r($verbsArr[$currentIndex-1]['inf']); 
+							print_r($verbsArr[$currentIndex-1]['inf']);
+							$correctAnswerInf = $verbsArr[$currentIndex-1]['inf'];
+							echo "<input type='hidden' name='inf' value='$correctAnswerInf' />"; 
 						}elseif($_POST['inf']!=$verbsArr[$currentIndex-1]['inf']){
 							echo "Infinitive<br/>";
 							echo "<input type='text' name='inf' style='border:2px solid red;' />";
@@ -82,7 +84,9 @@
 					<div class='ps'>
 						<?php 
 						if($_SESSION['visible']=='ps'){
-							print_r($verbsArr[$currentIndex-1]['ps']); 
+							print_r($verbsArr[$currentIndex-1]['ps']);
+							$correctAnswerPs = $verbsArr[$currentIndex-1]['ps'];
+							echo "<input type='hidden' name='ps' value='$correctAnswerPs' />"; 
 						}elseif($_POST['ps']!= $verbsArr[$currentIndex-1]['ps']){
 							echo "Past Simple<br/>";
 							echo "<input type='text' name='ps' style='border:2px solid red;' />";
@@ -96,7 +100,9 @@
 					<div class='pp'>
 						<?php 
 						if($_SESSION['visible']=='pp'){
-							print_r($verbsArr[$currentIndex-1]['pp']); 
+							print_r($verbsArr[$currentIndex-1]['pp']);
+							$correctAnswerPp = $verbsArr[$currentIndex-1]['pp'];
+							echo "<input type='hidden' name='pp' value='$correctAnswerPp' />"; 
 						}elseif($_POST['pp'] != $verbsArr[$currentIndex-1]['pp']){
 							echo "Past Participle<br/>";
 							echo "<input type='text' name='pp' style='border:2px solid red;' />";
@@ -107,8 +113,19 @@
 						}
 							?>
 					</div>
-					<div class='checkIt'>
-						<input type='submit' name='checkIt' value='Check it' />
-					</div>
+					
+					<?php
+					// если все введенные ответы верны кнопка "Проверить" меняется на "Продолжить"
+						if((isset($correctAnswerInf))&&(isset($correctAnswerPs))&&(isset($correctAnswerPp))){
+							// добавить номер пройденного элемента в сессию
+							echo "<div class='checkIt'>
+							<a href = 'index2.php'>Continue</a>
+							</div>";
+						}else{
+							echo "<div class='checkIt'>
+							<input type='submit' name='checkIt' value='Check it' />
+							</div>";
+						}
+					 ?>
 	
 </body>

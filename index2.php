@@ -65,10 +65,11 @@
 				else{
 					echo "You are entered correct all of verbs!";
 				}
-				
-				if($_POST['visibleForm']){// if set visibleForm - take it to the session, if no - take it to "no"
+				if(isset($_POST['visibleForm'])){// if set visibleForm - take it to the session, if no - take it to "no"
 							$_SESSION['visible'] = $_POST['visibleForm'];
-						}else{
+				}elseif(isset($_SESSION['visible'])){
+					echo ''; // если переменная видимости в сессии уже существует, то просто ничего не делаем 
+				}else{
 							$_SESSION['visible'] = "no";
 						}				
 				?>				
