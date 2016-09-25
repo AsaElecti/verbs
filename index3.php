@@ -33,7 +33,7 @@
 				$host='localhost'; // имя хоста (уточняется у провайдера)
 				$database='verbs'; // имя базы данных, которую вы должны создать
 				$user='root'; // заданное вами имя пользователя, либо определенное провайдером
-				$pswd=''; // заданный вами пароль
+				$pswd='a47287472'; // заданный вами пароль
  
 				$connection = mysqli_connect($host, $user, $pswd, $database);
 				mysqli_set_charset($connection, "utf8");
@@ -47,7 +47,7 @@
 				echo $count;
 				$verbsArr[] = array();
 				for($i=0; $i<$count; $i++){
-					$verlbsArr[$i] = mysqli_fetch_array($result);
+					$verbsArr[$i] = mysqli_fetch_array($result);
 				}
 				/*echo "</ br>";
 				echo "<pre>";
